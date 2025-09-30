@@ -1,0 +1,79 @@
+Functional Interface 
+
+A functional interface in Java is an interface that contains only one abstract method.
+Functional interfaces can have multiple default or static methods, but only one abstract method.
+
+@FunctionalInterface Annotation
+@FunctionalInterface annotation is used to ensure that the functional interface cannot 
+have more than one abstract method. In case more than one abstract methods are present,
+the compiler flags an "Unexpected @FunctionalInterface annotation" message. However, it is
+not mandatory to use this annotation.
+
+@FunctionalInterface
+interface Square {
+    int calculate(int x);
+}
+class Geeks {
+    public static void main(String args[]) {
+        int a = 5;
+
+        // lambda expression to define the calculate method
+        Square s = (int x) -> x * x;
+
+        // parameter passed and return type must be same as defined in the prototype
+        int ans = s.calculate(a);
+        System.out.println(ans);
+    }
+}
+
+Types of Functional Interfaces in Java
+
+Java SE 8 included four main kinds of functional interfaces which can be applied 
+in multiple situations as mentioned below:
+
+1--Consumer
+2--Predicate
+3--Function 
+4--Supplier
+
+
+Consumer<T>
+Represents an operation that takes one input but does not return a result.
+Used when you just want to consume data (e.g., printing, logging, storing).
+
+@FunctionalInterface
+interface Consumer<T>{
+	
+	    void accept(T t);	
+}
+public class Driver {
+	public static void main(String[] args) {
+		
+		Consumer<String> s=(name)->{System.out.println("hi "+name);};
+		s.accept("sumer");
+	    s.accept("Pathan");
+	    
+	   Consumer<Integer> I=(i)->{System.out.println(i+i);};
+	   I.accept(10);   
+	}
+}
+
+
+2. Predicate<T>
+Represents a condition (boolean-valued function).
+Takes one input and returns true/false.
+Mostly used for filtering in Streams.
+
+package Java8;
+
+interface Predicate<T>{
+	public boolean test(T t);
+}
+public class Pre {
+	public static void main(String[] args) {
+		Predicate<Integer> isEven=(n)->{return n%2==0; };
+		System.out.println(isEven.test(10));
+		System.out.println(isEven.test(5));
+	}
+}
+
