@@ -71,9 +71,14 @@ interface Predicate<T>{
 }
 public class Pre {
 	public static void main(String[] args) {
+		
 		Predicate<Integer> isEven=(n)->{return n%2==0; };
 		System.out.println(isEven.test(10));
 		System.out.println(isEven.test(5));
+		
+		Predicate<String> s=(w)->{return w.length()>=2 || w.contains("s"); };
+		System.out.print(s.test("sumer khan"));
 	}
 }
+
 
