@@ -106,8 +106,17 @@ public class func {
     public static void main(String[] args) {
         Function<Integer ,Integer> in=(i)->{ return i*i;};
         System.out.println(in.apply(30));
-
     }
 }
 
+
+
+
+Supplier
+Represents a supplier of results.
+Takes no input, only returns a value (T).
+
+No input → Produces output.
+Used for lazy evaluation, factories, object creation, and testing.
+Common with Stream.generate().
 
