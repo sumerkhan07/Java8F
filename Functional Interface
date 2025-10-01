@@ -82,3 +82,32 @@ public class Pre {
 }
 
 
+Function***
+Definition
+Represents a function that accepts one input argument (T) and produces a result (R).
+
+Key Features
+
+Input → Output transformation.
+Often used in streams (e.g., map()).
+Default methods:
+andThen(Function after) → first apply current function, then the next.
+compose(Function before) → first apply another, then current.
+identity() → returns input as output.
+
+Method:
+
+import java.util.*;
+interface Function<T,R>{
+     public  R apply(T t);
+        }
+
+public class func {
+    public static void main(String[] args) {
+        Function<Integer ,Integer> in=(i)->{ return i*i;};
+        System.out.println(in.apply(30));
+
+    }
+}
+
+
