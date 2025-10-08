@@ -1,0 +1,27 @@
+What is Stream API?
+Introduced in Java 8 as part of java.util.stream package
+Enables functional-style operations on collections
+Provides declarative way to process data (what to do, not how to do it)
+Supports sequential and parallel processing.
+
+The Stream API in Java is a powerful feature introduced in Java 8 that allows you to 
+process collections of objects in a functional, declarative way. It enables you to 
+perform operations on data (like filtering, mapping, and reducing) without
+writing explicit loops.
+
+Stream API is a key feature introduced in Java 8 that allows us to process collections of data in a functional and declarative manner.
+
+Main Characteristics:
+No storage - Streams don't store elements; they convey elements from a source
+Functional in nature - Operations produce results without modifying the source
+Lazy evaluation - Intermediate operations are not executed until a terminal operation is invoked
+Possibly unbounded - Collections have finite size, but streams don't need to
+Consumable - Elements can only be visited once, like an iterator.
+
+Stream Pipeline Structure 
+Source ---> Intermediate Operation(s) ---> Terminal Operations
+
+Three Core Components
+Source: Collections, arrays, I/O channels
+Intermediate Operations: filter(), map(), sorted() - these are lazy and return streams
+Terminal Operations: collect(), forEach(), reduce() - these trigger processing and return results
